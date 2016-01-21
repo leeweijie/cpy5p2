@@ -1,3 +1,4 @@
+# Import function from leap years module
 from q04_determine_leap_year import check_leap
 
 
@@ -11,7 +12,8 @@ def process_input():
         return False
 
 # Map month number to name
-month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+               "November", "December"]
 
 # Get user input
 month = input("Enter month: ")
@@ -19,6 +21,7 @@ year_input = input("Enter year: ")
 
 if process_input():
     if month == 2:
+        # Number of days in February is dependent on whether it is a leap year
         if check_leap(year_input):
             print("{0} {1} has 29 days".format(month_names[month-1], year_input))
         else:

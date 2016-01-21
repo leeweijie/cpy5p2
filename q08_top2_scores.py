@@ -6,11 +6,14 @@ def process_input():
     try:
         global number_of_students
         number_of_students = int(number_of_students)
+
+        # Invalid comparison if there are less than 2 students
         if number_of_students < 2:
             return False
         return True
     except ValueError:
         return False
+
 
 def score_compare():
     global number_of_students
@@ -33,7 +36,7 @@ def score_compare():
             students.append((student_name, student_score))
 
         # Sort the list by the second object of the tuples
-        sorted(students, key=lambda x: x[1])
+        students = sorted(students, key=lambda x: x[1], reverse=True)
         # Print result
         print("Highest scorer is {0} with a score of {1}".format((students[0])[0], (students[0])[1]))
         print("Second highest scorer is {0} with a score of {1}".format((students[1])[0], (students[1])[1]))

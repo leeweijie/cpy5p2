@@ -3,6 +3,8 @@ def process_input():
     global score
     try:
         score=float(score)
+
+        # Make sure score is > 0 and < 100
         if 0 <= score <= 100:
             return True
         else:

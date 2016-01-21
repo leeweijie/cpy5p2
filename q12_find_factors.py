@@ -9,11 +9,14 @@ def process_input():
     except ValueError:
         return False
 
-
+# Get user input
 number = input("Enter number: ")
+
+# Initialise factors variable
 factors = []
 if process_input():
 
+    # Special case as the range in the for loop below starts from 2
     if number == 1:
         factors = [1]
     elif number >= 2:
@@ -22,4 +25,4 @@ if process_input():
                 number /= i
                 factors.append(i)
 
-    print(*factors, sep = ', ')
+    print(*factors, sep=', ')
