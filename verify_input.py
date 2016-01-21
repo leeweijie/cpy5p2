@@ -7,7 +7,7 @@ def verify(user_input, input_type):
             for i in user_input:
                 float(i)
         else:
-            return
+            raise Exception("Invalid input type for variable verification")
         return True
     except ValueError:
         return False

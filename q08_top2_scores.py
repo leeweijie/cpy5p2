@@ -2,10 +2,10 @@ from verify_input import verify
 
 
 def score_compare():
-    global number_of_students
     # Get user input
     number_of_students = input("Enter the number of students: ")
     if verify(number_of_students, "int") and int(number_of_students) >= 2:
+        # Convert string input to int
         number_of_students = int(number_of_students)
 
         # Initialise array
@@ -15,6 +15,7 @@ def score_compare():
             student_name = input("Enter name of student {0}: ".format(i + 1))
             student_score = input("Enter score of student {0}: ".format(i + 1))
             if verify(student_score, "float"):
+                # Convert string input to float
                 student_score = float(student_score)
             else:
                 print("Invalid input")
@@ -29,6 +30,5 @@ def score_compare():
         print("Second highest scorer is {0} with a score of {1}".format((students[1])[0], (students[1])[1]))
     else:
         print("Invalid input")
-
 
 score_compare()

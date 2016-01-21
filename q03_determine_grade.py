@@ -4,6 +4,7 @@ from verify_input import verify
 score = input("Enter score: ")
 
 if verify(score, "float") and 0 <= (float(score)) <= 100:
+    # Convert string input to float
     score = float(score)
     # Check grade
     if score >= 70:

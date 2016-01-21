@@ -4,6 +4,7 @@ from verify_input import verify
 number = input("Enter number: ")
 
 if verify(number, "int"):
+    # Convert string input to integer
     number = int(number)
     # Check using remainder when number is divided by 2
     if number % 2 == 1:

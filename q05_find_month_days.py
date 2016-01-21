@@ -1,6 +1,6 @@
 from verify_input import verify
 
-# Import function from leap years module
+# Import function to check leap year
 from q04_determine_leap_year import check_leap
 
 # Map month number to name
@@ -12,6 +12,7 @@ month = input("Enter month: ")
 year = input("Enter year: ")
 
 if verify([month, year], "int"):
+    # Convert string inputs to ints
     month, year = int(month), int(year)
     if month == 2:
         # Number of days in February is dependent on whether it is a leap year
