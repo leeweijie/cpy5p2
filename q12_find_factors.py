@@ -1,21 +1,12 @@
-# Check if input is a number and convert it to an integer
-def process_input():
-    global number
-    try:
-        number = int(number)
-        if number <= 0:
-            return False
-        return True
-    except ValueError:
-        return False
+from verify_input import verify
 
 # Get user input
 number = input("Enter number: ")
 
 # Initialise factors variable
 factors = []
-if process_input():
-
+if verify(number, "int") and int(number) > 0:
+    number = int(number)
     # Special case as the range in the for loop below starts from 2
     if number == 1:
         factors = [1]

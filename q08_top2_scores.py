@@ -1,35 +1,22 @@
-# Check if input is a number and convert it to an integer
-number_of_students = 0
-
-
-def process_input():
-    try:
-        global number_of_students
-        number_of_students = int(number_of_students)
-
-        # Invalid comparison if there are less than 2 students
-        if number_of_students < 2:
-            return False
-        return True
-    except ValueError:
-        return False
+from verify_input import verify
 
 
 def score_compare():
     global number_of_students
     # Get user input
     number_of_students = input("Enter the number of students: ")
-    if process_input():
+    if verify(number_of_students, "int") and int(number_of_students) >= 2:
+        number_of_students = int(number_of_students)
 
         # Initialise array
         students = []
 
         for i in range(number_of_students):
-            student_name = input("Enter name of student {0}: ".format(i+1))
-            student_score = input("Enter score of student {0}: ".format(i+1))
-            try:
+            student_name = input("Enter name of student {0}: ".format(i + 1))
+            student_score = input("Enter score of student {0}: ".format(i + 1))
+            if verify(student_score, "float"):
                 student_score = float(student_score)
-            except ValueError:
+            else:
                 print("Invalid input")
                 return
             # Add tuple containing a pair of name and score to array
@@ -42,5 +29,6 @@ def score_compare():
         print("Second highest scorer is {0} with a score of {1}".format((students[1])[0], (students[1])[1]))
     else:
         print("Invalid input")
+
 
 score_compare()
