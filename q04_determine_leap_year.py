@@ -5,6 +5,7 @@ def check_leap(year):
     # Return True if it is a leap year, False if it is not
     return (year % 4 == 0 and year % 100 != 0) or year % 400 == 0
 
+
 # Code below is only executed if module is ran as a standalone program, not as an imported module
 if __name__ == "__main__":
     # Get user input
